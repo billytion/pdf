@@ -36,7 +36,7 @@ import hashlib
 import traceback
 import json
 from datetime import datetime
-from PDFCore import PDFParser, vulnsDict, PDFIndirectObject, PDFBody
+from PDFCore import *
 from PDFUtils import vtcheck
 
 
