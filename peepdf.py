@@ -94,7 +94,7 @@ def getLocalFilesInfo(filesList):
     return localFilesInfo
 
 
-def getpdfobjcttype(self, pdfIndirectObject):
+def getpdfobjcttype(self, id):
     pdfobjcttype = ''
     pdfObject = pdfIndirectObject.getObject()
     if pdfObject.hasElement('/Type'):
