@@ -36,7 +36,7 @@ import hashlib
 import traceback
 import json
 from datetime import datetime
-from PDFCore import PDFParser, vulnsDict, PDFBody, PDFDictionary
+from PDFCore import PDFParser, vulnsDict, PDFBody, 
 from PDFUtils import vtcheck
 
 
@@ -161,8 +161,7 @@ def getPeepXML(statsDict, version, revision):
             info.set('object_id', statsVersion['Info'])
         objects = etree.SubElement(versionInfo, 'objects', num=statsVersion['Objects'][0])
         for id in statsVersion['Objects'][1]:
-            object = etree.SubElement(objects, 'object', id=str(id))
-            object.set('type', pdfobjcttype)
+            object = etree.SubElement(objects, 'object', id=str(id), pdfobjecttype, 'type')
             if statsVersion['Compressed Objects'] is not None:
                 if id in statsVersion['Compressed Objects'][1]:
                     object.set('compressed', 'true')
