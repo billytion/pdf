@@ -161,7 +161,7 @@ def getPeepXML(statsDict, version, revision):
             info.set('object_id', statsVersion['Info'])
         objects = etree.SubElement(versionInfo, 'objects', num=statsVersion['Objects'][0])
         for id in statsVersion['Objects'][1]:
-            object = etree.SubElement(objects, 'object', id=str(id), pdfobjecttype, 'type')
+            object = etree.SubElement(objects, 'object', id=str(id))
             if statsVersion['Compressed Objects'] is not None:
                 if id in statsVersion['Compressed Objects'][1]:
                     object.set('compressed', 'true')
